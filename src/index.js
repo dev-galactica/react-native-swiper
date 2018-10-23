@@ -140,6 +140,7 @@ export default class extends Component {
     activeDotStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.number]),
     dotColor: PropTypes.string,
     activeDotColor: PropTypes.string,
+    useContentOffset: PropTypes.bool,
     /**
      * Called when the index has changed because the user swiped.
      */
@@ -170,6 +171,7 @@ export default class extends Component {
     autoplayTimeout: 2.5,
     autoplayDirection: true,
     index: 0,
+    useContentOffset: false,
     onIndexChanged: () => null
   }
 
@@ -628,6 +630,7 @@ export default class extends Component {
           contentContainerStyle={[styles.wrapperIOS, this.props.style]}
           onScrollBeginDrag={this.onScrollBegin}
           onMomentumScrollEnd={this.onScrollEnd}
+          contentOffset={this.props.useContentOffset ? this.state.offset : undefined}
           onScrollEndDrag={this.onScrollEndDrag}
           style={this.props.scrollViewStyle}>
           {pages}

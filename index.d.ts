@@ -99,6 +99,8 @@ declare module 'react-native-swiper' {
         automaticallyAdjustContentInsets?: boolean
         // Enables/Disables swiping
         scrollEnabled?: boolean
+        // Adjust slide position based on offset in iOS. It is necessary for fullscreen mode to work properly
+        useContentOffset?: boolean
     }
 
     export default class Swiper extends Component<SwiperProps, any> {
